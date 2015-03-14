@@ -5,4 +5,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_challenge">Challenge</string>
     <string name="title_activity_challenge_frame">ChallengeFrame</string>
+    <string name="title_activity_challenge_open">ChallengeOpen</string>
+    <string name="title_activity_challenge_list_current">ChallengeListCurrent</string>
 </resources>

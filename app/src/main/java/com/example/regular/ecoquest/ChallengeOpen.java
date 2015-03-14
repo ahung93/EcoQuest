@@ -6,19 +6,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class ChallengeFrame extends ActionBarActivity {
+public class ChallengeOpen extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_challenge_frame);
+        setContentView(R.layout.activity_challenge_open);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_challenge_frame, menu);
+        getMenuInflater().inflate(R.menu.menu_challenge_open, menu);
         return true;
     }
 

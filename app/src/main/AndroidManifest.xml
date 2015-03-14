@@ -21,8 +21,12 @@
             android:label="@string/title_activity_challenge" >
         </activity>
         <activity
-            android:name=".ChallengeFrame"
-            android:label="@string/title_activity_challenge_frame" >
+            android:name=".ChallengeOpen"
+            android:label="@string/title_activity_challenge_open" >
+        </activity>
+        <activity
+            android:name=".ChallengeListCurrent"
+            android:label="@string/title_activity_challenge_list_current" >
         </activity>
     </application>
 
