@@ -55,7 +55,7 @@ public class Challenge {
     }
 
     // Constructor for the Challenge Class (OPEN)
-    public void Challenge(State currentState, String newTitle, String newDescription, Type newType, long limit, int newReward, int newPenalty){
+    public Challenge(State currentState, String newTitle, String newDescription, Type newType, long limit, int newReward, int newPenalty){
         this.currentState = currentState;
         this.title = newTitle;
         this.description = newDescription;
