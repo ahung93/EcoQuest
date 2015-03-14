@@ -76,7 +76,7 @@ public class Challenge {
         currentUser = user;
     }
 
-    public void updateChallenge(int newProgress, Bitmap photo) throws UnExpectedStateException {
+    public void updateChallenge(int newProgress, Bitmap photo)  throws UnExpectedStateException{
         photos.add(photo);
         currentProgress = newProgress;
         if (currentProgress >= 100) {
@@ -88,21 +88,16 @@ public class Challenge {
         long currentTime = System.currentTimeMillis();
         if (currentTime - startTime.getTime() > timeLimit) {
             failChallenge();
-            throw new UnExpectedStateException("Challenge has expired, cannot complete it");
+            throw new UnExpectedStateException("Challenge has expired");
         }
         endTime = new Timestamp(System.currentTimeMillis());
         currentState = State.COMPLETED;
         currentUser.updateTotalPoints();
     }
 
-    public void completeChallenge(Bitmap photo){
-        long currentTime = System.currentTimeMillis();
-
-
+    public void completeChallenge(Bitmap photo) throws UnExpectedStateException{
+        completeChallenge();
         photos.add(photo);
-        endTime = new Timestamp(System.currentTimeMillis());
-        currentState = State.COMPLETED;
-        currentUser.updateTotalPoints();
     }
 
     public void failChallenge(){
