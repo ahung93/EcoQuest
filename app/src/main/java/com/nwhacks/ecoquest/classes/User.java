@@ -33,7 +33,7 @@ public class User {
         friends.add(user);
     }
 
-    // Go through all completed challenges, and sum up the points
+    // Go through all completed and failed challenges, and sum up the points
     // And also return the total points as well
     public int updateTotalPoints() {
         int sum = 0;
@@ -44,7 +44,7 @@ public class User {
             sum -= c.getRewardPoints();
         }
         totalPoints = Math.max(0, sum);
-        return totalPoints;
+        return Math.max(0, sum);
     }
 
     public String getName() {

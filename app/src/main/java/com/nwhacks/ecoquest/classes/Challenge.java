@@ -34,16 +34,18 @@ public class Challenge {
 
     private Timestamp startTime;
     private Timestamp endTime;
+    private long timeLimit;
 
     private User currentUser;
 
     // Default Constructor for all fields
-    public Challenge(State currentState, String title, String description, Type type, int progress, int reward, int penalty, ArrayList<Bitmap> photos, Timestamp startTime, Timestamp endTime, User user) {
+    public Challenge(State currentState, String title, String description, Type type, int progress, long limit, int reward, int penalty, ArrayList<Bitmap> photos, Timestamp startTime, Timestamp endTime, User user) {
         this.currentState = currentState;
         this.title = title;
         this.description = description;
         this.type = type;
         this.currentProgress = progress;
+        this.timeLimit = limit;
         this.rewardPoints = reward;
         this.penaltyPoints = penalty;
         this.photos = photos;
@@ -53,11 +55,12 @@ public class Challenge {
     }
 
     // Constructor for the Challenge Class (OPEN)
-    public void Challenge(State currentState, String newTitle, String newDescription, Type newType, int newReward, int newPenalty){
+    public void Challenge(State currentState, String newTitle, String newDescription, Type newType, long limit, int newReward, int newPenalty){
         this.currentState = currentState;
         this.title = newTitle;
         this.description = newDescription;
         this.type = newType;
+        this.timeLimit = limit;
         this.rewardPoints = newReward;
         this.penaltyPoints = newPenalty;
         this.currentProgress = 0;
@@ -73,7 +76,7 @@ public class Challenge {
         currentUser = user;
     }
 
-    public void updateChallenge(int newProgress, Bitmap photo) {
+    public void updateChallenge(int newProgress, Bitmap photo) throws UnExpectedStateException {
         photos.add(photo);
         currentProgress = newProgress;
         if (currentProgress >= 100) {
@@ -81,13 +84,21 @@ public class Challenge {
         }
     }
 
-    public void completeChallenge(){
+    public void completeChallenge() throws UnExpectedStateException{
+        long currentTime = System.currentTimeMillis();
+        if (currentTime - startTime.getTime() > timeLimit) {
+            failChallenge();
+            throw new UnExpectedStateException("Challenge has expired, cannot complete it");
+        }
         endTime = new Timestamp(System.currentTimeMillis());
         currentState = State.COMPLETED;
         currentUser.updateTotalPoints();
     }
 
     public void completeChallenge(Bitmap photo){
+        long currentTime = System.currentTimeMillis();
+
+
         photos.add(photo);
         endTime = new Timestamp(System.currentTimeMillis());
         currentState = State.COMPLETED;
@@ -135,5 +146,9 @@ public class Challenge {
 
     public long getEndTime(){
         return endTime.getTime();
+    }
+
+    public long getTimeLimit() {
+        return timeLimit;
     }
 }
