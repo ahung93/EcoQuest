@@ -60,9 +60,11 @@ public class ChallengesActivity extends ActionBarActivity implements ActionBar.T
 
         ChallengeLoader cl = new ChallengeLoader();
 
-        transportationChallengeListAdapter = new ChallengeListAdapter(getTransportationChallenges(Global.getTransportationChallenges()));
-        wasteAndEnergyChallengeListAdapter = new ChallengeListAdapter(getWasteAndEnergyChallenges(Global.getWasteAndEnergyChallenges()));
-        nutritionChallengeListAdapter = new ChallengeListAdapter(getNutritionChallenges(Global.getNutritionChallenges()));
+        List<Challenge> allChallenges = ChallengeLoader.getAvailableChallenges();
+
+        transportationChallengeListAdapter = new ChallengeListAdapter(getTransportationChallenges(allChallenges));
+        wasteAndEnergyChallengeListAdapter = new ChallengeListAdapter(getWasteAndEnergyChallenges(allChallenges));
+        nutritionChallengeListAdapter = new ChallengeListAdapter(getNutritionChallenges(allChallenges));
 
         // Set up the action bar.
         final ActionBar actionBar = getSupportActionBar();

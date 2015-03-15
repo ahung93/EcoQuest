@@ -14,9 +14,13 @@ public class Global {
 
     public static List<Challenge> allChallenges = ChallengeLoader.getAvailableChallenges();
 
+    public static List<Challenge> getAllChallenges() {
+        return ChallengeLoader.getAvailableChallenges();
+    }
+
     public static List<Challenge> getTransportationChallenges() {
         List<Challenge> ret = new ArrayList<>();
-        for (Challenge c : allChallenges) {
+        for (Challenge c : getAllChallenges()) {
             if (c.getType() == Challenge.Type.TRANSPORTATION) {
                 ret.add(c);
             }
@@ -26,7 +30,7 @@ public class Global {
 
     public static List<Challenge> getWasteAndEnergyChallenges() {
         List<Challenge> ret = new ArrayList<>();
-        for (Challenge c : allChallenges) {
+        for (Challenge c : getAllChallenges()) {
             if (c.getType().equals(Challenge.Type.WASTE_AND_ENERGY_REDUCTION)) {
                 ret.add(c);
             }
@@ -36,7 +40,7 @@ public class Global {
 
     public static List<Challenge> getNutritionChallenges() {
         List<Challenge> ret = new ArrayList<>();
-        for (Challenge c : allChallenges) {
+        for (Challenge c : getAllChallenges()) {
             if (c.getType() == Challenge.Type.NUTRITION) {
                 ret.add(c);
             }
@@ -76,27 +80,29 @@ public class Global {
     }
 
     public static Challenge randomStateChallenge(){
-        Challenge rc = randomChallenge();
+        int rcNum = (int)((Math.random() * getAllChallenges().size()) % getAllChallenges().size());
+        Challenge rc = getAllChallenges().get(rcNum);
+
         int rand = (int) (Math.random() * 3) % 3;
         switch (rand) {
-            case 0:
-                rc.setCurrentState(Challenge.State.COMPLETED);
+            case 0: // Still in progress
+                rc.startChallenge(mainUser);
                 break;
-            case 1:
-                rc.setCurrentState(Challenge.State.FAILED);
+            case 1: // Failed
+                rc.failChallenge();
                 break;
-            case 2:
-                rc.setCurrentState(Challenge.State.COMPLETED);
+            case 2: //
+                rc.completeChallenge();
                 break;
             default:
-                rc.setCurrentState(Challenge.State.OPEN);
+                //rc.setCurrentState(Challenge.State.OPEN);
                 break;
         }
         return rc;
     }
 
     public static Challenge randomChallenge(){
-        return allChallenges.get((int)((Math.random() * allChallenges.size()) % allChallenges.size()));
+        return getAllChallenges().get((int)((Math.random() * getAllChallenges().size()) % getAllChallenges().size()));
     }
 
 }
