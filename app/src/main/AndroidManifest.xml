@@ -28,6 +28,22 @@
             android:name=".ChallengeListCurrent"
             android:label="@string/title_activity_challenge_list_current" >
         </activity>
+        <activity
+            android:name=".ChallengeCompleted"
+            android:label="@string/title_activity_challenge_completed" >
+        </activity>
+        <activity
+            android:name=".ChallengeInProgress"
+            android:label="@string/title_activity_challenge_in_progress" >
+        </activity>
+        <activity
+            android:name=".FirstChallenge"
+            android:label="@string/title_activity_first_challenge" >
+        </activity>
+        <activity
+            android:name=".ChallengeFailedActivity"
+            android:label="@string/title_activity_challenge_failed" >
+        </activity>
     </application>
 
 </manifest>
