@@ -3,7 +3,8 @@
     android:layout_height="fill_parent"
     tools:context=".TitleScreen"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="#dde6e8">
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,11 +37,21 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="47dp" />
 
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="75dp"
+        android:id="@+id/imageView2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_marginBottom="180dp"
+        android:background="#369973" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="COMPLETED"
+        android:text="23:11 left"
         android:id="@+id/textView14"
         android:layout_alignBottom="@+id/imageView2"
         android:layout_alignLeft="@+id/textView9"
@@ -51,9 +62,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:gravity="center_horizontal"
-        android:background="#ff369973"
-        android:textColor="#ffffffff"
-        android:typeface="serif" />
+        android:textColor="#FFFFFF" />
 
     <ImageView
         android:layout_width="200dp"

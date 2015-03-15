@@ -25,12 +25,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="C&apos;mon, get in on the action!"
+        android:text="the action!"
         android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="40dp"
-        android:textSize="35dp"
+        android:layout_marginTop="72sp"
+        android:textSize="35sp"
         android:elegantTextHeight="true"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:textAlignment="center"
+        android:singleLine="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C&apos;mon, get in on"
+        android:id="@+id/textView"
+        android:textSize="35sp"
+        android:elegantTextHeight="true"
+        android:textColor="#FFFFFF"
+        android:textAlignment="center"
+        android:singleLine="true"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="1dp"
+        android:id="@+id/imageView5"
+        android:background="#3d9e95"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2"
+        android:layout_marginTop="60dp" />
 
 </RelativeLayout>
