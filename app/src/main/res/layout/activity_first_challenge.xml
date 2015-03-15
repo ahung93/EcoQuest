@@ -5,7 +5,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".TitleScreen"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@drawable/home_bg">
 
     <Button
         android:layout_width="wrap_content"
@@ -13,20 +14,23 @@
         android:text="+        Take Your First Challenge"
         android:id="@+id/button2"
         android:width="300dp"
+        android:height="70dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="320dp" />
+        android:layout_marginBottom="320dp"
+        android:background="#FFFFFF"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Challenge yourself to live better"
+        android:text="C&apos;mon, get in on the action!"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:textSize="35dp"
-        android:elegantTextHeight="true" />
+        android:elegantTextHeight="true"
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>
