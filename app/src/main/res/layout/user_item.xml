@@ -14,7 +14,9 @@
             android:text="1"
             android:id="@+id/user_item_rank"
             android:layout_weight="0.2"
-            android:gravity="right" />
+            android:gravity="right"
+            android:textStyle="bold"
+            android:textColor="#224a54" />
 
         <ImageView
             android:layout_width="0dp"
@@ -29,18 +31,21 @@
             android:layout_weight="0.6">
 
             <TextView
-                android:layout_width="fill_parent"
+                android:layout_width="197dp"
                 android:layout_height="0dp"
                 android:text="Alvin Hung"
                 android:id="@+id/user_item_fullname"
-                android:layout_weight="0.3" />
+                android:layout_weight="0.3"
+                android:textStyle="bold"
+                android:textColor="#224a54" />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
                 android:text="Description"
                 android:id="@+id/user_item_description"
-                android:layout_weight="0.6" />
+                android:layout_weight="0.6"
+                android:textColor="#224a54" />
         </LinearLayout>
 
         <TextView
@@ -49,7 +54,8 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="12pts"
             android:id="@+id/user_item_points"
-            android:layout_weight="0.3" />
+            android:layout_weight="0.3"
+            android:textColor="#224a54" />
 
     </LinearLayout>
 </LinearLayout>
