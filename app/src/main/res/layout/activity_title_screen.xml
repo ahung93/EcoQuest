@@ -76,6 +76,6 @@
         android:layout_centerHorizontal="true"
         android:contentDescription="logo"
         android:adjustViewBounds="true"
-        android:maxWidth="200dp"/>
+        android:maxWidth="170dp"/>
 
 </RelativeLayout>
