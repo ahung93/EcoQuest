@@ -7,35 +7,15 @@
     android:orientation="vertical"
     android:gravity="center">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button2"
-        android:width="250dp"
-        android:layout_below="@+id/textView9"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginTop="51dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button3"
-        android:width="150dp"
-        android:layout_below="@+id/button2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" />
-
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageButton"
         android:src="@drawable/eco_challenge_logo"
-        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:layout_alignParentTop="false"
         android:layout_centerHorizontal="true"
-        android:scaleType="centerCrop" />
+        android:layout_marginBottom="250dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,7 +25,7 @@
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="201dp" />
+        android:layout_marginTop="250dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -54,6 +34,6 @@
         android:text="A fun way to live sustainably"
         android:id="@+id/textView9"
         android:layout_below="@+id/textView"
-        android:layout_alignRight="@+id/imageButton"
-        android:layout_alignEnd="@+id/imageButton" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
 </RelativeLayout>
