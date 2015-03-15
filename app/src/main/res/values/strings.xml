@@ -7,4 +7,12 @@
     <string name="title_activity_challenge_frame">ChallengeFrame</string>
     <string name="title_activity_challenge_open">ChallengeOpen</string>
     <string name="title_activity_challenge_list_current">ChallengeListCurrent</string>
+    <string name="title_activity_leader_board">LeaderBoardActivity</string>
+
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="title_activity_leaderboard">LeaderboardActivity</string>
+    <string name="title_activity_test">test</string>
 </resources>

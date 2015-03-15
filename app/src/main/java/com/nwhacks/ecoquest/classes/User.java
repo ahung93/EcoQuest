@@ -15,6 +15,8 @@ public class User {
         this.name = name;
         this.email = email;
         this.totalPoints = 0;
+        this.allChallenges = new ArrayList<>();
+        this.friends = new ArrayList<>();
     }
 
     public User(String name, String email, ArrayList<User> friends, ArrayList<Challenge> challenges, int totalPoints) {

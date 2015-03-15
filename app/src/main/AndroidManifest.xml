@@ -21,16 +21,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Challenge"
-            android:label="@string/title_activity_challenge" >
-        </activity>
-        <activity
             android:name=".ChallengeOpen"
             android:label="@string/title_activity_challenge_open" >
         </activity>
         <activity
             android:name=".ChallengeListCurrent"
             android:label="@string/title_activity_challenge_list_current" >
+        </activity>
+        <activity
+            android:name=".LeaderboardActivity"
+            android:label="@string/title_activity_leaderboard" >
         </activity>
     </application>
 
