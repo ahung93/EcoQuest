@@ -3,7 +3,8 @@
     android:layout_height="fill_parent"
     tools:context="com.example.regular.ecoquest.ChallengeInProgress"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="#dde6e8">
 
     <TextView
         android:layout_width="wrap_content"

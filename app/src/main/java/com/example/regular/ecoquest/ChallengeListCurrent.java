@@ -80,7 +80,7 @@ public class ChallengeListCurrent extends ActionBarActivity {
         final ChallengeListCurrent current = this;
         challengeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View viewClicked, int position, long id) {
-                Intent intent = new Intent(current, ChallengeOpen.class);
+                Intent intent = new Intent(current, ChallengeInProgress.class);
                 startActivity(intent);
             }
         });
