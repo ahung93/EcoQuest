@@ -29,7 +29,7 @@
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/imageView"
+        android:id="@+id/ecochallenge_logo"
         android:src="@drawable/challenges_header_bg"
         android:layout_marginBottom="430dp"
         android:layout_alignParentLeft="true"
@@ -44,9 +44,9 @@
         android:text="Take the bus"
         android:id="@+id/user_item_fullname"
         android:layout_gravity="top|bottom"
-        android:layout_alignBottom="@+id/imageView"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView"
+        android:layout_alignBottom="@+id/ecochallenge_logo"
+        android:layout_alignLeft="@+id/ecochallenge_logo"
+        android:layout_alignStart="@+id/ecochallenge_logo"
         android:layout_marginLeft="35dp"
         android:layout_marginBottom="35dp"
         android:textSize="30dp"
@@ -72,8 +72,8 @@
         android:layout_height="75dp"
         android:id="@+id/imageView2"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView"
+        android:layout_alignLeft="@+id/ecochallenge_logo"
+        android:layout_alignStart="@+id/ecochallenge_logo"
         android:layout_marginBottom="139dp"
         android:background="#ffbaced1" />
 
@@ -147,7 +147,7 @@
         android:layout_height="25dp"
         android:id="@+id/imageView3"
         android:background="#ffbaced1"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_alignRight="@+id/imageView"
-        android:layout_alignEnd="@+id/imageView" />
+        android:layout_alignTop="@+id/ecochallenge_logo"
+        android:layout_alignRight="@+id/ecochallenge_logo"
+        android:layout_alignEnd="@+id/ecochallenge_logo" />
 </RelativeLayout>

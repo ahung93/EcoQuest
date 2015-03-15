@@ -9,13 +9,15 @@
         android:text="23hrs left"
         android:id="@+id/challenge_item_remaining_time"
         android:layout_weight="0.25"
-        android:gravity="center_vertical" />
+        android:gravity="center_vertical"
+        android:textColor="#ffffff"/>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.75">
+        android:layout_weight="0.75"
+        android:background="#c8e0c3">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -34,9 +36,12 @@
                 android:layout_height="fill_parent"
                 android:text="Take the Bus"
                 android:id="@+id/challenge_item_title"
-                android:gravity="left"
+                android:gravity="left|center_vertical"
                 android:layout_gravity="left|center_vertical"
-                android:layout_weight="0.7" />
+                android:layout_weight="0.7"
+                android:textColor="#134f09"
+                android:textStyle="bold"
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="0dp"
@@ -45,7 +50,9 @@
                 android:id="@+id/challenge_item_points"
                 android:gravity="center"
                 android:layout_gravity="center_vertical|right"
-                android:layout_weight="0.2" />
+                android:layout_weight="0.2"
+                android:textColor="#134f09"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -65,7 +72,9 @@
                 android:text="Description"
                 android:id="@+id/challenge_item_description"
                 android:layout_weight="0.7"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical"
+                android:textColor="#134f09"
+                android:textSize="15sp" />
 
             <View
                 android:layout_width="0dp"
