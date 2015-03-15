@@ -17,4 +17,5 @@
     <string name="title_activity_test">test</string>
     <string name="title_activity_challenges">ChallengesActivity</string>
     <string name="title_activity_main_menu">MainMenuActivity</string>
+    <string name="title_activity_challenge_in_progress">ChallengeInProgress</string>
 </resources>

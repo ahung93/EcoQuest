@@ -32,11 +32,20 @@ public class MainMenuActivity extends ActionBarActivity {
             }
         });
 
-        // Opens In Progress Challenges
+        // Opens Open Challenges
         challengeOpenRegion.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Log.i("In Progress Challenges", "Opening In Progress Challenges Page");
+                Log.i("Open Challenges", "Opening Open Challenges Page");
                 Intent i = new Intent(myActivity.getApplicationContext(), ChallengesActivity.class);
+                startActivity(i);
+            }
+        });
+
+        // Opens Leaderboards
+        leaderboards.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Log.i("LeaderboardChallenges", "Opening Leaderboard Page");
+                Intent i = new Intent(myActivity.getApplicationContext(), LeaderboardActivity.class);
                 startActivity(i);
             }
         });
