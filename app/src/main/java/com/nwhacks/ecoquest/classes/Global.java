@@ -12,6 +12,14 @@ public class Global {
 
     public static User mainUser = createDefaultUser();
 
+    private static Global global = new Global();
+
+    private Global(){}
+
+    public static Global getInstance(){
+        return global;
+    }
+
     public static List<Challenge> allChallenges = ChallengeLoader.getAvailableChallenges();
 
     public static List<Challenge> getAllChallenges() {
