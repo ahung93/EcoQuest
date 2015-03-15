@@ -276,8 +276,10 @@ public class ChallengesActivity extends ActionBarActivity implements ActionBar.T
             TextView titleText = (TextView) itemView.findViewById(R.id.challenge_item_title);
             TextView descriptionText = (TextView) itemView.findViewById(R.id.challenge_item_description);
             TextView pointsText = (TextView) itemView.findViewById(R.id.challenge_item_points);
-            titleText.setText(currentChallenge.getTitle());
-            descriptionText.setText(currentChallenge.getDescription().substring(0, 30) + "...");
+            String title = currentChallenge.getTitle();
+            titleText.setText(title.substring(0, Math.min(23, title.length())) + "...");
+            String description = currentChallenge.getDescription();
+            descriptionText.setText(description.substring(0, Math.min(37, description.length())) + "...");
             pointsText.setText((Integer.toString(currentChallenge.getRewardPoints())));
 
             LinearLayout layout = (LinearLayout) itemView.findViewById(R.id.challenge_item_layout);

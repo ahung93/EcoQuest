@@ -27,7 +27,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="78dp"
             android:text="2"
             android:id="@+id/challenges_current_list_weekly_points"
             android:layout_gravity="bottom|center_horizontal"
@@ -38,7 +38,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            android:layout_height="57dp"
             android:text="pts"
             android:id="@+id/challenges_current_list_points_prefix"
             android:layout_gravity="bottom|center_horizontal"
