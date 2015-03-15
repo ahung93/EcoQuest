@@ -62,8 +62,10 @@ public class ChallengeListCurrent extends ActionBarActivity {
         currentChallenges.add(new Challenge(Challenge.State.IN_PROGRESS, "Eat 2 Bananas", "Ate 2 Bananas", Challenge.Type.NUTRITION , 4 * 1000 * 60 * 60, 5, 5 ));
         currentChallenges.add(new Challenge(Challenge.State.IN_PROGRESS, "Eat 2 Bananas", "Ate 2 Bananas", Challenge.Type.NUTRITION , 4 * 1000 * 60 * 60, 5, 5 ));
 
+        User user = new User("Alvin", "Hung");
+
         for (Challenge c : currentChallenges){
-            c.startChallenge();
+            c.startChallenge(user);
         }
     }
 
