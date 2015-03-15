@@ -62,9 +62,9 @@
         </LinearLayout>
 
         <ListView
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="0dp"
-            android:id="@+id/listView"
+            android:id="@+id/challengesCurrentList"
             android:layout_weight="0.4" />
 
         <LinearLayout
