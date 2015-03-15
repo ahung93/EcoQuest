@@ -193,8 +193,6 @@ public class LeaderboardActivity extends ActionBarActivity implements ActionBar.
 
             ListView lv = (ListView) rootView.findViewById(R.id.userList);
 
-
-
             return rootView;
         }
     }

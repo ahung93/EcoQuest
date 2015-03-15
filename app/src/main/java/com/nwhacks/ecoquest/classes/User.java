@@ -11,6 +11,12 @@ public class User {
 
     private ArrayList<User> friends;
 
+    public User(String name, String email){
+        this.name = name;
+        this.email = email;
+        this.totalPoints = 0;
+    }
+
     public User(String name, String email, ArrayList<User> friends, ArrayList<Challenge> challenges, int totalPoints) {
         this.name = name;
         this.email = email;

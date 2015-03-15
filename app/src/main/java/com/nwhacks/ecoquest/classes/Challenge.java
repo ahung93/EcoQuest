@@ -66,11 +66,23 @@ public class Challenge {
         this.currentProgress = 0;
     }
 
+    // For testing purposes
+    public Challenge(State currentState, String newTitle, String newDescription, Type newType, int newReward, int newPenalty){
+        this.currentState = currentState;
+        this.title = newTitle;
+        this.description = newDescription;
+        this.type = newType;
+        this.rewardPoints = newReward;
+        this.penaltyPoints = newPenalty;
+        this.currentProgress = 0;
+    }
+
+
     //===========================================================
     // Mutator Methods
-    public void startChallenge(User user) throws UnExpectedStateException{
-        if (currentState != State.OPEN)
-            throw new UnExpectedStateException();
+    public void startChallenge(User user) { // throws UnExpectedStateException{
+        //if (currentState != State.OPEN)
+            //throw new UnExpectedStateException();
         startTime = new Timestamp(System.currentTimeMillis());
         currentState = State.IN_PROGRESS;
         currentUser = user;
@@ -84,11 +96,11 @@ public class Challenge {
         }
     }
 
-    public void completeChallenge() throws UnExpectedStateException{
+    public void completeChallenge() {//throws UnExpectedStateException{
         long currentTime = System.currentTimeMillis();
         if (currentTime - startTime.getTime() > timeLimit) {
             failChallenge();
-            throw new UnExpectedStateException("Challenge has expired");
+            //throw new UnExpectedStateException("Challenge has expired");
         }
         endTime = new Timestamp(System.currentTimeMillis());
         currentState = State.COMPLETED;
