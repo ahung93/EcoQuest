@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.regular.ecoquest" >
+    <uses-permission android:name="android.permission."/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />>
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
 
+    <uses-permission android:name="android.permission.CAMERA"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,10 +21,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Challenge"
-            android:label="@string/title_activity_challenge" >
-        </activity>
-        <activity
             android:name=".ChallengeOpen"
             android:label="@string/title_activity_challenge_open" >
         </activity>
@@ -29,20 +29,8 @@
             android:label="@string/title_activity_challenge_list_current" >
         </activity>
         <activity
-            android:name=".ChallengeCompleted"
-            android:label="@string/title_activity_challenge_completed" >
-        </activity>
-        <activity
-            android:name=".ChallengeInProgress"
-            android:label="@string/title_activity_challenge_in_progress" >
-        </activity>
-        <activity
-            android:name=".FirstChallenge"
-            android:label="@string/title_activity_first_challenge" >
-        </activity>
-        <activity
-            android:name=".ChallengeFailedActivity"
-            android:label="@string/title_activity_challenge_failed" >
+            android:name=".LeaderboardActivity"
+            android:label="@string/title_activity_leaderboard" >
         </activity>
     </application>
 

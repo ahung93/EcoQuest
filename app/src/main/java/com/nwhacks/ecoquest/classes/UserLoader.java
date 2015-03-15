@@ -17,6 +17,7 @@ public class  UserLoader {
         User user = new User(firstNames[randomFirst], lastNames[randomLast]);
         user.addNewChallenge(new Challenge(Challenge.State.COMPLETED, "Eat 2 Bananas", "Ate 2 Bananas", Challenge.Type.NUTRITION, 4 * 1000 * 60 * 60, randomFirst, 5));
         user.addNewChallenge(new Challenge(Challenge.State.COMPLETED, "Recycle 2 cans", "Recycled 2 Cans", Challenge.Type.WASTE_AND_ENERGY_REDUCTION, 1 * 1000 * 60 * 60, randomLast, 5));
+        user.updateTotalPoints();
         return user;
     }
 
@@ -31,7 +32,7 @@ public class  UserLoader {
         User friend2 = createRandomFriend();
         user.addFriend(friend1);
         user.addFriend(friend2);
-
+        user.updateTotalPoints();
         return user;
     }
 

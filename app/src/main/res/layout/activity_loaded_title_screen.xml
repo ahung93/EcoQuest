@@ -34,7 +34,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
+        android:id="@+id/ecochallenge_logo"
         android:layout_marginBottom="87dp"
         android:src="@drawable/eco_challenge_logo"
         android:contentDescription="logo"

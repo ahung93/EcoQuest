@@ -1,8 +1,10 @@
 package com.example.regular.ecoquest;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -17,15 +19,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.nwhacks.ecoquest.classes.Challenge;
 import com.nwhacks.ecoquest.classes.User;
 import com.nwhacks.ecoquest.classes.UserLoader;
 
 
 public class LeaderboardActivity extends ActionBarActivity implements ActionBar.TabListener {
+
+    static UserListAdapter userListAdapter;
+    static MyListAdapter myListAdapter;
+    List<User> allUsers;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -50,6 +56,14 @@ public class LeaderboardActivity extends ActionBarActivity implements ActionBar.
         // Set up the action bar.
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+        User user = UserLoader.createDefaultUser();
+
+        allUsers = new ArrayList<>(user.getFriends());
+        allUsers.add(user);
+
+        userListAdapter = new UserListAdapter(LeaderboardActivity.this, allUsers);
+        myListAdapter = new MyListAdapter();
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -134,7 +148,7 @@ public class LeaderboardActivity extends ActionBarActivity implements ActionBar.
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position);
+            return PlaceholderFragment.newInstance(position + 1);
         }
 
         @Override
@@ -143,21 +157,21 @@ public class LeaderboardActivity extends ActionBarActivity implements ActionBar.
             return 3;
         }
 
+
         @Override
         public CharSequence getPageTitle(int position) {
             Locale l = Locale.getDefault();
             switch (position) {
                 case 0:
-                    return "This week".toUpperCase(l);
+                    return "This Week".toUpperCase(l);
                 case 1:
-                    return "This month".toUpperCase(l);
+                    return "This Month".toUpperCase(l);
                 case 2:
-                    return "All time".toUpperCase(l);
+                    return "All Time".toUpperCase(l);
             }
             return null;
         }
     }
-
 
     /**
      * A placeholder fragment containing a simple view.
@@ -188,12 +202,38 @@ public class LeaderboardActivity extends ActionBarActivity implements ActionBar.
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_leaderboard, container, false);
-//            rootView
-            User user = UserLoader.createDefaultUser();
-
             ListView lv = (ListView) rootView.findViewById(R.id.userList);
-
+            lv.setAdapter(myListAdapter);
             return rootView;
+        }
+    }
+
+    public class MyListAdapter extends ArrayAdapter<User> {
+
+
+        public MyListAdapter() {
+            super(LeaderboardActivity.this, R.layout.user_item, allUsers);
+        }
+
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View itemView = convertView;
+            if (itemView == null) {
+                itemView = getLayoutInflater().inflate(R.layout.user_item, parent, false);
+            }
+
+            User currentUser = allUsers.get(position);
+
+            TextView rankText = (TextView) itemView.findViewById(R.id.user_item_rank);
+            TextView fullNameText = (TextView) itemView.findViewById(R.id.user_item_fullname);
+            TextView descriptionText = (TextView) itemView.findViewById(R.id.user_item_description);
+            TextView pointsText = (TextView) itemView.findViewById(R.id.user_item_points);
+
+            rankText.setText(Integer.toString(position + 1));
+            fullNameText.setText(currentUser.getName());
+            descriptionText.setText("Some description");
+            pointsText.setText((Integer.toString(currentUser.getTotalPoints())));
+
+            return itemView;
         }
     }
 
