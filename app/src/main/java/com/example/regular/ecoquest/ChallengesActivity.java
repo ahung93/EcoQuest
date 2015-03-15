@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -12,14 +13,15 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -38,6 +40,8 @@ public class ChallengesActivity extends ActionBarActivity implements ActionBar.T
      * may be best to switch to a
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
+    final ChallengesActivity current = this;
+
     SectionsPagerAdapter mSectionsPagerAdapter;
     static ChallengeListAdapter transportationChallengeListAdapter;
     static ChallengeListAdapter wasteAndEnergyChallengeListAdapter;
@@ -58,8 +62,6 @@ public class ChallengesActivity extends ActionBarActivity implements ActionBar.T
         ChallengeLoader cl = new ChallengeLoader();
 
         allChallenges = cl.getAvailableChallenges();
-
-        Log.i("logcatz", "SIZE: " + Integer.toString(allChallenges.size()));
 
         transportationChallengeListAdapter = new ChallengeListAdapter(getTransportationChallenges(allChallenges));
         wasteAndEnergyChallengeListAdapter = new ChallengeListAdapter(getWasteAndEnergyChallenges(allChallenges));
@@ -114,12 +116,10 @@ public class ChallengesActivity extends ActionBarActivity implements ActionBar.T
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -181,7 +181,6 @@ public class ChallengesActivity extends ActionBarActivity implements ActionBar.T
         for (Challenge c : challenges) {
             if (c.getType() == Challenge.Type.TRANSPORTATION) {
                 ret.add(c);
-                Log.i("logcatz", "in transportation");
             }
         }
         return ret;
@@ -190,10 +189,8 @@ public class ChallengesActivity extends ActionBarActivity implements ActionBar.T
     private List<Challenge> getWasteAndEnergyChallenges(List<Challenge> challenges) {
         List<Challenge> ret = new ArrayList<>();
         for (Challenge c : challenges) {
-            Log.i("logcatz", "before if");
             if (c.getType().equals(Challenge.Type.WASTE_AND_ENERGY_REDUCTION)) {
                 ret.add(c);
-                Log.i("logcatz", "in w/e");
             }
         }
         return ret;
@@ -204,7 +201,6 @@ public class ChallengesActivity extends ActionBarActivity implements ActionBar.T
         for (Challenge c : challenges) {
             if (c.getType() == Challenge.Type.NUTRITION) {
                 ret.add(c);
-                Log.i("logcatz", "in nutrition");
             }
         }
         return ret;
@@ -260,7 +256,7 @@ public class ChallengesActivity extends ActionBarActivity implements ActionBar.T
         }
     }
 
-    public class ChallengeListAdapter extends ArrayAdapter<Challenge>{
+    public class ChallengeListAdapter extends ArrayAdapter<Challenge> {
 
         private List<Challenge> challenges;
 
@@ -276,29 +272,37 @@ public class ChallengesActivity extends ActionBarActivity implements ActionBar.T
             }
 
             Challenge currentChallenge = challenges.get(position);
-            Log.i("lolcatz", "found challenge");
 
             TextView titleText = (TextView) itemView.findViewById(R.id.challenge_item_title);
             TextView descriptionText = (TextView) itemView.findViewById(R.id.challenge_item_description);
             TextView pointsText = (TextView) itemView.findViewById(R.id.challenge_item_points);
             titleText.setText(currentChallenge.getTitle());
-            descriptionText.setText(currentChallenge.getDescription().substring(0,30) + "...");
+            descriptionText.setText(currentChallenge.getDescription().substring(0, 30) + "...");
             pointsText.setText((Integer.toString(currentChallenge.getRewardPoints())));
+
+            LinearLayout layout = (LinearLayout) itemView.findViewById(R.id.challenge_item_layout);
+            layout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(current, ChallengeOpen.class);
+                    //intent.putE
+                    startActivity(intent);
+                }
+            });
 
             // Add to the items
             /**
-            TextView rankText = (TextView) itemView.findViewById(R.id.user_item_rank);
-            TextView fullNameText = (TextView) itemView.findViewById(R.id.user_item_fullname);
-            TextView descriptionText = (TextView) itemView.findViewById(R.id.user_item_description);
-            TextView pointsText = (TextView) itemView.findViewById(R.id.user_item_points);
+             TextView rankText = (TextView) itemView.findViewById(R.id.user_item_rank);
+             TextView fullNameText = (TextView) itemView.findViewById(R.id.user_item_fullname);
+             TextView descriptionText = (TextView) itemView.findViewById(R.id.user_item_description);
+             TextView pointsText = (TextView) itemView.findViewById(R.id.user_item_points);
 
-            rankText.setText(Integer.toString(position + 1));
-            fullNameText.setText(currentChallenge.getName());
-            descriptionText.setText("Some description");
-            pointsText.setText((Integer.toString(currentChallenge.getTotalPoints())));
-            **/
+             rankText.setText(Integer.toString(position + 1));
+             fullNameText.setText(currentChallenge.getName());
+             descriptionText.setText("Some description");
+             pointsText.setText((Integer.toString(currentChallenge.getTotalPoints())));
+             **/
             return itemView;
         }
     }
-
 }

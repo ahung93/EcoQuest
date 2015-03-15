@@ -17,7 +17,9 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="0.75"
-        android:background="#c8e0c3">
+        android:background="#c8e0c3"
+        android:clickable="true"
+        android:id="@+id/challenge_item_layout">
 
         <LinearLayout
             android:orientation="horizontal"
