@@ -30,6 +30,7 @@ import com.nwhacks.ecoquest.classes.UserLoader;
 public class LeaderboardActivity extends ActionBarActivity implements ActionBar.TabListener {
 
     static UserListAdapter userListAdapter;
+    static MyListAdapter myListAdapter;
     List<User> allUsers;
 
     /**
@@ -50,7 +51,7 @@ public class LeaderboardActivity extends ActionBarActivity implements ActionBar.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_leaderboard);
 
         // Set up the action bar.
         final ActionBar actionBar = getSupportActionBar();
@@ -62,6 +63,7 @@ public class LeaderboardActivity extends ActionBarActivity implements ActionBar.
         allUsers.add(user);
 
         userListAdapter = new UserListAdapter(LeaderboardActivity.this, allUsers);
+        myListAdapter = new MyListAdapter();
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -98,7 +100,7 @@ public class LeaderboardActivity extends ActionBarActivity implements ActionBar.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_test, menu);
+        getMenuInflater().inflate(R.menu.menu_leaderboard, menu);
         return true;
     }
 
@@ -201,7 +203,7 @@ public class LeaderboardActivity extends ActionBarActivity implements ActionBar.
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_leaderboard, container, false);
             ListView lv = (ListView) rootView.findViewById(R.id.userList);
-            lv.setAdapter(userListAdapter);
+            lv.setAdapter(myListAdapter);
             return rootView;
         }
     }
