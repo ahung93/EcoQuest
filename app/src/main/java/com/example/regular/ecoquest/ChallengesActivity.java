@@ -27,6 +27,7 @@ import android.widget.TextView;
 
 import com.nwhacks.ecoquest.classes.Challenge;
 import com.nwhacks.ecoquest.classes.ChallengeLoader;
+import com.nwhacks.ecoquest.classes.Global;
 import com.nwhacks.ecoquest.classes.User;
 
 
@@ -47,8 +48,6 @@ public class ChallengesActivity extends ActionBarActivity implements ActionBar.T
     static ChallengeListAdapter wasteAndEnergyChallengeListAdapter;
     static ChallengeListAdapter nutritionChallengeListAdapter;
 
-    static List<Challenge> allChallenges;
-
     /**
      * The {@link ViewPager} that will host the section contents.
      */
@@ -61,11 +60,9 @@ public class ChallengesActivity extends ActionBarActivity implements ActionBar.T
 
         ChallengeLoader cl = new ChallengeLoader();
 
-        allChallenges = cl.getAvailableChallenges();
-
-        transportationChallengeListAdapter = new ChallengeListAdapter(getTransportationChallenges(allChallenges));
-        wasteAndEnergyChallengeListAdapter = new ChallengeListAdapter(getWasteAndEnergyChallenges(allChallenges));
-        nutritionChallengeListAdapter = new ChallengeListAdapter(getNutritionChallenges(allChallenges));
+        transportationChallengeListAdapter = new ChallengeListAdapter(getTransportationChallenges(Global.getTransportationChallenges()));
+        wasteAndEnergyChallengeListAdapter = new ChallengeListAdapter(getWasteAndEnergyChallenges(Global.getWasteAndEnergyChallenges()));
+        nutritionChallengeListAdapter = new ChallengeListAdapter(getNutritionChallenges(Global.getNutritionChallenges()));
 
         // Set up the action bar.
         final ActionBar actionBar = getSupportActionBar();

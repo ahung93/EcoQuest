@@ -49,6 +49,14 @@ public class MainMenuActivity extends ActionBarActivity {
                 startActivity(i);
             }
         });
+
+        challengeFinishedRegion.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Log.i("FinishedChallenges", "Opening Finished Page");
+                Intent i = new Intent(myActivity.getApplicationContext(), ChallengeListCurrent.class);
+                startActivity(i);
+            }
+        });
     }
 
 
