@@ -119,6 +119,10 @@ public class Challenge implements Parcelable{
         currentUser.updateTotalPoints();
     }
 
+    protected void setCurrentState(State s){
+        this.currentState = s;
+    }
+
     //===========================================================
     // Accessor Methods
     public State getCurrentState(){

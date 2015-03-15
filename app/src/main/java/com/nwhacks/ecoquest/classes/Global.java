@@ -7,7 +7,10 @@ import java.util.List;
  * Created by William on 2015-03-15.
  */
 public class Global {
-    public static User mainUser = UserLoader.createDefaultUser();
+    public static String[] firstNames = {"Bob", "Alvin", "Nena", "Nick", "Dude", "Best friend", "Cool friend", "Friend"};
+    public static String[] lastNames = {"Hung", "Nguyen", "Pezarro", "Smith", "Flawd"};
+
+    public static User mainUser = createDefaultUser();
 
     public static List<Challenge> allChallenges = ChallengeLoader.getAvailableChallenges();
 
@@ -39,6 +42,61 @@ public class Global {
             }
         }
         return ret;
+    }
+
+    public static User createRandomFriend() {
+        int randomFirst = (int) ((Math.random() * firstNames.length) % firstNames.length);
+        int randomLast = (int) ((Math.random() * lastNames.length) % lastNames.length);
+        User user = new User(firstNames[randomFirst], lastNames[randomLast]);
+        Challenge c1 = randomChallenge();
+        c1.completeChallenge();
+        user.addNewChallenge(c1);
+        c1 = randomChallenge();
+        c1.completeChallenge();
+        user.addNewChallenge(c1);
+        user.addNewChallenge(new Challenge(Challenge.State.COMPLETED, "Recycle 2 cans", "Recycled 2 Cans", Challenge.Type.WASTE_AND_ENERGY_REDUCTION, 1 * 1000 * 60 * 60, randomLast, 5));
+        user.updateTotalPoints();
+        return user;
+    }
+
+    private static User createDefaultUser() {
+        User user = new User("Will", "will@will.com");
+        List<Challenge> completedChallenges = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
+            user.addNewChallenge(randomStateChallenge());
+        }
+
+        for (int j = 0; j < 3; j++) {
+            User friend1 = createRandomFriend();
+            user.addFriend(friend1);
+        }
+        user.updateTotalPoints();
+        return user;
+    }
+
+    public static Challenge randomStateChallenge(){
+        Challenge rc = randomChallenge();
+        int rand = (int) (Math.random() * 3) % 3;
+        switch (rand) {
+            case 0:
+                rc.setCurrentState(Challenge.State.COMPLETED);
+                break;
+            case 1:
+                rc.setCurrentState(Challenge.State.FAILED);
+                break;
+            case 2:
+                rc.setCurrentState(Challenge.State.COMPLETED);
+                break;
+            default:
+                rc.setCurrentState(Challenge.State.OPEN);
+                break;
+        }
+        return rc;
+    }
+
+    public static Challenge randomChallenge(){
+        return allChallenges.get((int)((Math.random() * allChallenges.size()) % allChallenges.size()));
     }
 
 }
