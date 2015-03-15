@@ -16,13 +16,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:layout_gravity="left|bottom"
                 android:layout_weight="0.80"
                 android:text="Take the Bus"
                 android:id="@+id/challenge_title"
-                android:gravity="center"
                 android:textColor="#ffffff"
-                android:textSize="25sp" />
+                android:textSize="22sp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:textIsSelectable="false" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -33,7 +34,7 @@
                 android:id="@+id/challenge_points"
                 android:gravity="center"
                 android:textColor="#ffffff"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -55,7 +56,8 @@
                 android:layout_weight="0.4"
                 android:text="Hello World!!!!"
                 android:id="@+id/challenge_description"
-                android:textColor="#224a54" />
+                android:textColor="#224a54"
+                android:textSize="20dp" />
         </LinearLayout>
 
         <LinearLayout

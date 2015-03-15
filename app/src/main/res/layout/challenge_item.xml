@@ -40,10 +40,10 @@
                 android:id="@+id/challenge_item_title"
                 android:gravity="left|center_vertical"
                 android:layout_gravity="left|center_vertical"
-                android:layout_weight="0.7"
+                android:layout_weight="0.76"
                 android:textColor="#134f09"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:paddingTop="5dp" />
 
             <LinearLayout
@@ -59,7 +59,7 @@
                     android:text="0"
                     android:id="@+id/challenge_item_points"
                     android:gravity="center|right"
-                    android:layout_weight="0.09"
+                    android:layout_weight="0.04"
                     android:textColor="#134f09"
                     android:textStyle="bold"
                     android:layout_marginRight="2dp" />
@@ -71,9 +71,9 @@
                     android:id="@+id/textView3"
                     android:gravity="left|center"
                     android:layout_gravity="center_vertical|right"
-                    android:layout_weight="0.09"
+                    android:layout_weight="0.03"
                     android:textColor="#134f09"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="5dp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -92,13 +92,14 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="fill_parent"
+                android:layout_height="21dp"
                 android:text="Description"
                 android:id="@+id/challenge_item_description"
-                android:layout_weight="0.7"
+                android:layout_weight="0.87"
                 android:gravity="center_vertical"
                 android:textColor="#134f09"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:layout_gravity="left|top" />
 
             <View
                 android:layout_width="0dp"
