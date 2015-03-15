@@ -1,0 +1,275 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.regular.ecoquest.ChallengeListCurrent"
+    android:background="#dde6e8"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/challenges_header_bg_slice"
+        android:layout_weight="0.075">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="My Challenges"
+            android:id="@+id/textView2"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textAllCaps="true"
+            android:textSize="30sp"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="1"
+        android:layout_weight="0.05"
+        android:gravity="center"
+        android:background="#224a54">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Transportation"
+            android:id="@+id/textView3"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:textColor="#224a54" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="WasteEnergy"
+            android:id="@+id/textView4"
+            android:layout_weight="0.34"
+            android:gravity="center"
+            android:textColor="#224a54" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Nutrition"
+            android:id="@+id/textView5"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:textColor="#224a54" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.125"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:id="@+id/challenges_current_list_weekly_points"
+            android:layout_gravity="bottom|center_horizontal"
+            android:textSize="40sp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:gravity="bottom|center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="pts"
+            android:id="@+id/challenges_current_list_points_prefix"
+            android:layout_gravity="bottom|center_horizontal"
+            android:textColor="#ffffff"
+            android:gravity="bottom|center_horizontal"
+            android:textSize="35dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="This Week"
+            android:id="@+id/challenges_current_list_this_week"
+            android:layout_gravity="center"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:textColor="#00c9ba"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="16pts"
+            android:id="@+id/challenges_current_list_total_points"
+            android:layout_gravity="center_vertical|right"
+            android:layout_weight="0.20"
+            android:gravity="center"
+            android:textColor="#134f09"
+            android:textStyle="bold"
+            android:textSize="20sp" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/progressBar"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.20"
+            android:progressBackgroundTint="#ff000000"
+            android:progressTint="#ffffffff"
+            android:progress="50"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:clickable="true"
+        android:id="@+id/main_menu_challenge_open">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.10"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="Open Challenges"
+                android:id="@+id/main_menu_challenge_list_open"
+                android:gravity="left|center_vertical"
+                android:layout_gravity="left|center_vertical"
+                android:layout_weight="0.7"
+                android:textColor="#134f09"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:clickable="true"
+        android:id="@+id/main_menu_challenge_in_progress">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.10"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="In Progress Challenges"
+                android:id="@+id/main_menu_challenge_list_in_progress"
+                android:gravity="left|center_vertical"
+                android:layout_gravity="left|center_vertical"
+                android:layout_weight="0.7"
+                android:textColor="#134f09"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:clickable="true"
+        android:id="@+id/main_menu_challenge_finished">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.10"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="Finished Challenges"
+                android:id="@+id/main_menu_challenges_list_finished"
+                android:gravity="left|center_vertical"
+                android:layout_gravity="left|center_vertical"
+                android:layout_weight="0.7"
+                android:textColor="#134f09"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:clickable="true"
+        android:id="@+id/main_menu_leaderboards_page">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.10"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="Leaderboards"
+                android:id="@+id/main_menu_leaderboards"
+                android:gravity="left|center_vertical"
+                android:layout_gravity="left|center_vertical"
+                android:layout_weight="0.7"
+                android:textColor="#134f09"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:phoneNumber="false" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

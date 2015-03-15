@@ -67,7 +67,10 @@
             android:layout_alignStart="@+id/textView"
             android:background="#3d9e95"
             android:textColor="#ffffff"
-            android:layout_weight="0.075" />
+            android:layout_weight="0.075"
+            android:clickable="true"
+            android:enabled="true"
+            android:onClick="go_to_main_menu" />
 
         <TextView
             android:layout_width="fill_parent"
@@ -93,7 +96,10 @@
             android:background="#3d9e95"
             android:textColor="#ffffff"
             android:singleLine="true"
-            android:layout_weight="0.075" />
+            android:layout_weight="0.075"
+            android:enabled="true"
+            android:clickable="true"
+            android:onClick="go_to_main_menu" />
 
         <View
             android:layout_width="fill_parent"

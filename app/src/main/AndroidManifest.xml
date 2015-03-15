@@ -38,8 +38,13 @@
             android:label="@string/title_activity_leaderboard" >
         </activity>
         <activity
+
             android:name=".ChallengesActivity"
             android:label="@string/title_activity_challenges" >
+        </activity>
+        <activity
+            android:name=".MainMenuActivity"
+            android:label="@string/title_activity_main_menu" >
         </activity>
     </application>
 

@@ -40,9 +40,10 @@ public class TitleScreen extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void goChallengeList(View view){
-        Intent intent = new Intent(this, ChallengeListCurrent.class);
+    public void go_to_main_menu(View view){
+        Intent intent = new Intent(this, MainMenuActivity.class);
         Log.i("goChallengeListButton", "Going to go ChallengeList");
         startActivity(intent);
     }
+
 }
