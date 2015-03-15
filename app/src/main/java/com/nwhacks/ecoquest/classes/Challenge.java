@@ -1,12 +1,14 @@
 package com.nwhacks.ecoquest.classes;
 
 import android.graphics.Bitmap;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import java.sql.Timestamp;
 import java.lang.System;
 import java.util.ArrayList;
 
-public class Challenge {
+public class Challenge implements Parcelable{
     public enum State {
         OPEN,
         IN_PROGRESS,
@@ -157,5 +159,104 @@ public class Challenge {
 
     public long getTimeLimit() {
         return timeLimit;
+    }
+
+
+    // ================ Parcelling part =========================
+    public Challenge(Parcel in){
+        String[] data = new String[7];
+
+        in.readStringArray(data);
+        this.title = data[0];
+        this.description = data[1];
+        this.rewardPoints = Integer.parseInt(data[2]);
+        this.type = stringToType(data[3]);
+        this.currentState = stringToState(data[4]);
+        this.currentProgress = Integer.parseInt(data[5]);
+        this.timeLimit = Long.parseLong(data[6]);
+    }
+
+    @Override
+    public int describeContents(){
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeStringArray(new String[]{
+                    this.title,
+                    this.description,
+                    Integer.toString(this.rewardPoints),
+                    typeToString(this.type),
+                    stateToString(this.currentState),
+                    Integer.toString(this.currentProgress),
+                    Long.toString(this.timeLimit)
+              }
+        );
+    }
+    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+        public Challenge createFromParcel(Parcel in) {
+            return new Challenge(in);
+        }
+
+        public Challenge[] newArray(int size) {
+            return new Challenge[size];
+        }
+    };
+
+    private String typeToString(Type t){
+        switch (t){
+            case TRANSPORTATION:
+                return "TRANSPORTATION";
+            case NUTRITION:
+                return "NUTRITION";
+            case WASTE_AND_ENERGY_REDUCTION:
+                return "WASTE_AND_ENERGY_REDUCTION";
+            default:
+                break;
+        }
+        return "";
+    }
+
+    private Type stringToType(String s){
+        switch (s) {
+            case "TRANSPORTATION":
+                return Type.TRANSPORTATION;
+            case "NUTRITION":
+                return Type.NUTRITION;
+            case "WASTE_AND_ENERGY_REDUCTION":
+                return Type.WASTE_AND_ENERGY_REDUCTION;
+            default:
+                break;
+        }
+        return null;
+    }
+
+    private String stateToString(State state){
+        switch (state) {
+            case OPEN:
+                return "OPEN";
+            case IN_PROGRESS:
+                return "IN_PROGRESS";
+            case COMPLETED:
+                return "COMPLETED";
+            case FAILED:
+                return "FAILED";
+        }
+        return "";
+    }
+
+    private State stringToState(String s){
+        switch (s) {
+            case "OPEN":
+                return State.OPEN;
+            case "IN_PROGRESS":
+                return State.IN_PROGRESS;
+            case "COMPLETED":
+                return State.COMPLETED;
+            case "FAILED":
+                return State.FAILED;
+        }
+        return null;
     }
 }

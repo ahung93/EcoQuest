@@ -271,7 +271,7 @@ public class ChallengesActivity extends ActionBarActivity implements ActionBar.T
                 itemView = getLayoutInflater().inflate(R.layout.challenge_item, parent, false);
             }
 
-            Challenge currentChallenge = challenges.get(position);
+            final Challenge currentChallenge = challenges.get(position);
 
             TextView titleText = (TextView) itemView.findViewById(R.id.challenge_item_title);
             TextView descriptionText = (TextView) itemView.findViewById(R.id.challenge_item_description);
@@ -287,7 +287,7 @@ public class ChallengesActivity extends ActionBarActivity implements ActionBar.T
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(current, ChallengeOpen.class);
-                    //intent.putE
+                    intent.putExtra("challenge", currentChallenge);
                     startActivity(intent);
                 }
             });

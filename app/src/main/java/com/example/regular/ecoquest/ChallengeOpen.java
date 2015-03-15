@@ -1,9 +1,13 @@
 package com.example.regular.ecoquest;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.nwhacks.ecoquest.classes.Challenge;
 
 
 public class ChallengeOpen extends ActionBarActivity {
@@ -12,6 +16,20 @@ public class ChallengeOpen extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_open);
+
+        Intent i = getIntent();
+        Challenge challenge = (Challenge) i.getParcelableExtra("challenge");
+
+        if (challenge != null) {
+            TextView titleText = (TextView) this.findViewById(R.id.challenge_title);
+            TextView pointsText = (TextView) this.findViewById(R.id.challenge_points);
+            TextView descText = (TextView) this.findViewById(R.id.challenge_description);
+
+            titleText.setText(challenge.getTitle());
+            descText.setText(challenge.getDescription());
+            pointsText.setText((Integer.toString(challenge.getRewardPoints()))+"pts");
+
+        }
     }
 
 
