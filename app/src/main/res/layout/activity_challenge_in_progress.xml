@@ -91,13 +91,14 @@
         android:layout_gravity="center"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:textColor="#224a54" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Be ready to upload or take a photo to prove you&apos;ve completed the challegne!"
+        android:text="Be ready to upload or take a photo to prove you&apos;ve completed the challenge!"
         android:id="@+id/textView15"
         android:textSize="15dp"
         android:layout_alignParentBottom="true"
@@ -106,6 +107,7 @@
         android:gravity="center_horizontal" />
 
     <Button
+        android:onClick="captureHandler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Complete"
@@ -119,7 +121,9 @@
         android:layout_marginTop="20dp"
         android:visibility="visible"
         android:width="150dp"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:clickable="true"
+        />
 
     <Button
         android:layout_width="wrap_content"
@@ -131,11 +135,12 @@
         android:layout_alignEnd="@+id/textView9"
         android:layout_alignParentRight="true"
         android:layout_marginRight="40dp"
-        android:background="#ff303030"
+        android:background="#30393f"
         android:textColor="#ffffffff"
         android:layout_marginTop="20dp"
         android:width="120dp"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:clickable="true" />
 
     <ImageView
         android:layout_width="800dp"
