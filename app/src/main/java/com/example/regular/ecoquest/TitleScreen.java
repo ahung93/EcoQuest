@@ -1,9 +1,12 @@
 package com.example.regular.ecoquest;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class TitleScreen extends ActionBarActivity {
@@ -35,5 +38,11 @@ public class TitleScreen extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void goChallengeList(View view){
+        Intent intent = new Intent(this, ChallengeListCurrent.class);
+        Log.i("goChallengeListButton", "Going to go ChallengeList");
+        startActivity(intent);
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="100dp">
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,12 +26,12 @@
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:layout_weight="0.10"/>
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:text="Take the Bus"
                 android:id="@+id/challenge_item_title"
                 android:gravity="left"
@@ -40,7 +40,7 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:text="2pts"
                 android:id="@+id/challenge_item_points"
                 android:gravity="center"
@@ -56,7 +56,7 @@
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:layout_weight="0.10"/>
 
             <TextView
@@ -64,12 +64,12 @@
                 android:layout_height="fill_parent"
                 android:text="Description"
                 android:id="@+id/challenge_item_description"
-                android:layout_weight="0.8"
+                android:layout_weight="0.7"
                 android:gravity="center_vertical" />
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:layout_weight="0.20"/>
         </LinearLayout>
     </LinearLayout>
