@@ -6,8 +6,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".TitleScreen"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/home_bg"
-    android:id="@+id/">
+    android:background="@drawable/home_bg">
 
     <Button
         android:layout_width="wrap_content"
@@ -35,22 +34,6 @@
         android:textColor="#ffffff"
         android:singleLine="true" />
 
-    <ImageButton
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/logo"
-        android:src="@drawable/eco_challenge_logo"
-        android:scaleType="centerCrop"
-        android:focusableInTouchMode="true"
-        android:background="@null"
-        android:layout_toRightOf="@+id/textView10"
-        android:layout_marginTop="106dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/button3"
-        android:layout_alignEnd="@+id/button3"
-        android:layout_marginRight="22dp"
-        android:layout_marginEnd="22dp"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,25 +42,40 @@
         android:id="@+id/textView"
         android:layout_below="@+id/textView9"
         android:layout_centerHorizontal="true"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:textAllCaps="false" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceBold"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="A fun way to live sustainably"
         android:id="@+id/textView9"
         android:textColor="#ffffff"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLight"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="OR"
         android:id="@+id/textView10"
         android:layout_below="@+id/button2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/eco_challenge_logo"
+        android:layout_above="@+id/textView9"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="logo"
+        android:adjustViewBounds="true"
+        android:maxWidth="200dp"/>
+
 </RelativeLayout>
